@@ -149,7 +149,7 @@ export default function App() {
                 setSelectedDevice(user.devices[0]);
             }
         }
-    }, [user, isLoggedIn, deviceType, hostIp, devices])
+    }, [user, isLoggedIn, deviceType, hostIp])
 
     useEffect(() => {
         //stores the deviceType in state

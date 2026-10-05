@@ -52,9 +52,7 @@ export default function Header (props) {
                     </div>
                     <div className={"header-navigation"}>
                         <p className={
-                            localStorage.getItem('deviceType') === ""
-                                ? "header-navigation__links disabled-button"
-                                : props.activeView === "resources"
+                            props.activeView === "resources"
                                     ? "header-navigation__links disabled-button"
                                     : "header-navigation__links"
                         } onClick={() => {
@@ -64,9 +62,7 @@ export default function Header (props) {
                             Metrics
                         </p>
                         <p className={
-                            localStorage.getItem('deviceType') === ""
-                                ? "header-navigation__links disabled-button"
-                                : props.activeView === "settings"
+                            props.activeView === "settings"
                                     ? "header-navigation__links disabled-button"
                                     : "header-navigation__links"
                         } onClick={(e) => {
@@ -76,9 +72,7 @@ export default function Header (props) {
                             Settings
                         </p>
                         <p className={
-                            localStorage.getItem('deviceType') === ""
-                                ? "header-navigation__links disabled-button"
-                                : props.activeView === "admin"
+                            props.activeView === "admin"
                                     ? "header-navigation__links disabled-button"
                                     : "header-navigation__links"
                         } onClick={() => {
@@ -88,9 +82,7 @@ export default function Header (props) {
                             Administration
                         </p>
                         <p className={
-                            localStorage.getItem('deviceType') === ""
-                                ? "header-navigation__links disabled-button"
-                                : props.activeView === "devices"
+                            props.activeView === "devices"
                                     ? "header-navigation__links disabled-button"
                                     : "header-navigation__links"
                         } onClick={() => {
