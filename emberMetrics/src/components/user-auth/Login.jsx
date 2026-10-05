@@ -32,7 +32,7 @@ export default function Login (props) {
 
         try {
             const response = await fetch(
-                `http://${props.deviceType === 'remote-device' ? props.hostIp : 'localhost'}:3000${isRegister ? '/users' : '/users/login'}`,
+                `http://${props.deviceType === 'remote-access' ? props.hostIp : 'localhost'}:3000${isRegister ? '/users' : '/users/login'}`,
                 {
                     method: 'POST',
                     headers: {

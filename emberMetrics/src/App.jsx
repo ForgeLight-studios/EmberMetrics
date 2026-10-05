@@ -446,7 +446,7 @@ export default function App() {
                     handleNotification('notice', 'Your session has ran out, please refresh the page');
                 }
                 isFetching.current = true;
-                const response = await fetch(`http://${deviceType === 'remote-access' ? hostIp : 'localhost'}:3000`, {
+                const response = await fetch(`http://${deviceType === 'remote-access' ? hostIp : '127.0.0.1'}:3000`, {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",

@@ -68,7 +68,7 @@ export default function UserManagement({users, allDevices, handleNotification, d
         }
         if (!account) return
         try {
-            const response = await fetch(`http://${deviceType === 'remote-device' ? hostIp : '127.0.0.1'}:3000/admin/toggleUserActive`, {
+            const response = await fetch(`http://${deviceType === 'remote-access' ? hostIp : '127.0.0.1'}:3000/admin/toggleUserActive`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

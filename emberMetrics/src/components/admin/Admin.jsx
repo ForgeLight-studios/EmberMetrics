@@ -25,7 +25,7 @@ export default function Admin({devices, handleNotification,
             if (!sessionId) {
                 handleNotification('notice', 'Your session has ran out, please refresh the page');
             }
-            const response = await fetch(`http://${deviceType === 'remote-device' ? hostIp : '127.0.0.1'}:3000/users`, {
+            const response = await fetch(`http://${deviceType === 'remote-access' ? hostIp : '127.0.0.1'}:3000/users`, {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",
@@ -49,7 +49,7 @@ export default function Admin({devices, handleNotification,
             if (!sessionId) {
                 handleNotification('notice', 'Your session has ran out, please refresh the page');
             }
-            const response = await fetch(`http://${deviceType === 'remote-device' ? hostIp : '127.0.0.1'}:3000/devices`, {
+            const response = await fetch(`http://${deviceType === 'remote-access' ? hostIp : '127.0.0.1'}:3000/devices`, {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",
