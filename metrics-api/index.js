@@ -52,7 +52,7 @@ app.post('/', async (req, res) => {
     }
 
     const allowed = await checkDevicePerm(user.id, device.id)
-    if (!allowed) {
+    if (!allowed && device.name !== "Host-Device") {
         console.log('[ Server - /getMetrics ] User is not allowed ot access this device')
         return res.status(403).send({success: false})
     }
