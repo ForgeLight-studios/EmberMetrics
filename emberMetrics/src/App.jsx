@@ -108,7 +108,7 @@ export default function App() {
                 localStorage.setItem("hostPublicIP", host);
             }
         }
-        if (hostIp === "" && deviceType === 'remote-access') getPublicIP();
+        if (hostIp === "" && deviceType === 'remote-device') getPublicIP();
     }, [hostIp, deviceType, isLoggedIn]);
 
     function changeFont (type, size) {
@@ -126,7 +126,7 @@ export default function App() {
     useEffect(() => {
         if (isLoggedIn && user) {
             const userDevices = user.devices;
-            if (deviceType === "remote-access") {
+            if (deviceType === "remote-device") {
                 const localhost = userDevices.find((device) => device.name === "localhost" || device.ip === "127.0.0.1")
                 if (localhost) {
                     const updatedDevices = userDevices.map((device) => {
