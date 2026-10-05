@@ -134,7 +134,8 @@ export default function App() {
                             return {
                                 name: 'Host-Device',
                                 ip: hostIp,
-                                id: device.id
+                                id: device.id,
+                                isHost: true
                             };
                         }
                         return device;
