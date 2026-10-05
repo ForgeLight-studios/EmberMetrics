@@ -38,7 +38,7 @@ export default function App() {
 
     async function validateSessions(sessionId) {
         try {
-            const response = await fetch(`http://${deviceType === 'remote-device'? hostIp : '127.0.0.1'}:3000/validateSession`, {
+            const response = await fetch(`http://${deviceType === 'remote-access'? hostIp : '127.0.0.1'}:3000/validateSession`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -108,7 +108,7 @@ export default function App() {
                 localStorage.setItem("hostPublicIP", host);
             }
         }
-        if (hostIp === "" && deviceType === 'remote-device') getPublicIP();
+        if (hostIp === "" && deviceType === 'remote-access') getPublicIP();
     }, [hostIp, deviceType, isLoggedIn]);
 
     function changeFont (type, size) {
@@ -126,7 +126,7 @@ export default function App() {
     useEffect(() => {
         if (isLoggedIn && user) {
             const userDevices = user.devices;
-            if (deviceType === "remote-device") {
+            if (deviceType === "remote-access") {
                 const localhost = userDevices.find((device) => device.name === "localhost" || device.ip === "127.0.0.1")
                 if (localhost) {
                     const updatedDevices = userDevices.map((device) => {
@@ -446,7 +446,7 @@ export default function App() {
                     handleNotification('notice', 'Your session has ran out, please refresh the page');
                 }
                 isFetching.current = true;
-                const response = await fetch(`http://${deviceType === 'remote-device' ? hostIp : 'localhost'}:3000`, {
+                const response = await fetch(`http://${deviceType === 'remote-access' ? hostIp : 'localhost'}:3000`, {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
